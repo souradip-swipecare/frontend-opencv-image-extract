@@ -1,5 +1,6 @@
 {
   "name": "document-scanner-app",
+  "homepage": ".",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
