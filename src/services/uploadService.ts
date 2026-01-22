@@ -1,6 +1,6 @@
 import { auth } from '../config/firebase';
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = process.env.REACT_APP_PROD_URL|| "http://127.0.0.1:8000";
 
 export interface DetectionResponse {
   success: boolean;
