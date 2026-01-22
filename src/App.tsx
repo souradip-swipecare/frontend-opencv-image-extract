@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { Login } from './components/Auth/Login';
+import { Signup } from './components/Auth/Signup';
+import { Dashboard } from './components/Dashboard/Dashboard';
+
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
+
+function AppContent() {
+  const { currentUser } = useAuth();
+  const [isLoginMode, setIsLoginMode] = useState(true);
+
+  if (!currentUser) {
+    return isLoginMode ? (
+      <Login onToggleMode={() => setIsLoginMode(false)} />
+    ) : (
+      <Signup onToggleMode={() => setIsLoginMode(true)} />
+    );
+  }
+
+  return <Dashboard />;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
