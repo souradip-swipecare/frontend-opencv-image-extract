@@ -1,10 +1,15 @@
 ##  Open cv  Image extraction project by Souradip Biswas
 ![Login Page](screenshots/login_page.png)
-![Login Page](screenshots/dashboard.png)
-![Login Page](screenshots/login_page.png)
-![Login Page](screenshots/login_page.png)
-![Login Page](screenshots/login_page.png)
+![Dashboard Page](screenshots/dashboard.png)
+![Result 1 Page](screenshots/image_result_1.png)
+![Result 2 Page](screenshots/image_result_2.png)
+![Result 3 Page](screenshots/image_result_3.png)
+![Result 4 Page](screenshots/image_list.png)
+![Result 5 Page](screenshots/show_extracted_1.png)
+![Result 6 Page](screenshots/show_extracted_2.png)
+![Result 7 Page](screenshots/show_extracted_3.png)
 
+image_list
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
