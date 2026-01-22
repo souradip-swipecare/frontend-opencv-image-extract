@@ -5,14 +5,16 @@ import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAmL3tI2TjsSx3F18ia3dYB4gortK4tNqo",
-  authDomain: "souradip-opencv-assignment.firebaseapp.com",
-  projectId: "souradip-opencv-assignment",
-  storageBucket: "souradip-opencv-assignment.firebasestorage.app", 
-  messagingSenderId: "341393792712",
-  appId: "1:341393792712:web:be9103ac557706ff0c4ffd",
-  measurementId: "G-2T6L9T06H8"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
